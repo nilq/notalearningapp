@@ -1,8 +1,15 @@
-from django.shortcuts import render
+from django.shortcuts import render, render_to_response
 from django.http      import HttpResponse
+from django.template  import RequestContext
 
 def index(request):
-  return HttpResponse("yes hello")
+  context = RequestContext(request)
+
+  context_dict = {
+    'boldmessage': "i'm in fact strong",
+  }
+
+  return render('rango/index.html', context_dict, context)
 
 
 def about(request):
