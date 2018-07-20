@@ -9,7 +9,7 @@ def index(request):
     'boldmessage': "i'm in fact strong",
   }
 
-  return render('rango/index.html', context_dict, context)
+  return render_to_response('rango/index.html', context_dict, context)
 
 
 def about(request):
